@@ -1,0 +1,2 @@
+# wedding
+### a Sails application
