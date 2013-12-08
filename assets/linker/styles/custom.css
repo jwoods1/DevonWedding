@@ -1,0 +1,33 @@
+.topBack{
+	height: 750px;
+	background-image:url('/images/devonIMG1.jpg');
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+.midBack{
+	height: 400px;
+	background-color: blue;
+}
+
+.navbar-fixed-top {
+	width:50%;
+	margin: auto;
+}
+.modal-body{
+	text-align: center;
+}
+#btnYes{
+	width:20%;
+}
+#btnNo{
+	width:20%;
+}
+@media (max-width: 600px) {
+	.navbar-fixed-top {
+	width:90%;
+	margin: auto;
+	}
+	.topBack{
+		margin-top:50px;
+	}
+}

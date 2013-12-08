@@ -28,12 +28,46 @@
     -->
 
     <!--STYLES-->
-    
+    <link rel="stylesheet" href="/linker/styles/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/linker/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/linker/styles/custom.css">
     <!--STYLES END-->
   </head>
 
   <body>
-    <%- body %>
+
+    
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Link</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#myModal">RSVP</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="topBack">
+      </div>
+      <div class="midBack">
+        <img src="" alt="ALT">
+      </div>
+
+    
+      
+    
+      <%- body %>
 
 
 
@@ -89,6 +123,8 @@
     <script src="/linker/js/socket.io.js"></script>
     <script src="/linker/js/sails.io.js"></script>
     <script src="/linker/js/app.js"></script>
+    <script src="/linker/js/jquery.js"></script>
+    <script src="/linker/js/bootstrap.min.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
