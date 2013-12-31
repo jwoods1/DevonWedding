@@ -14,6 +14,14 @@
 
 module.exports.adapters = {
 
+  'default': 'mongo',
+    mongo: {
+      module   :'sails-mongo',
+      url: process.env.DB_URL,
+      schema   :true
+    }
+  }
+/*
   // If you leave the adapter config unspecified 
   // in a model definition, 'default' will be used.
   'default': 'disk',
@@ -35,5 +43,5 @@ module.exports.adapters = {
     // so you don't inadvertently push it up if you're using version control
     password: 'YOUR_MYSQL_PASSWORD', 
     database: 'YOUR_MYSQL_DB'
-  }
+  }*/
 };
