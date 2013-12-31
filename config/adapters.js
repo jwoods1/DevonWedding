@@ -20,7 +20,7 @@ module.exports.adapters = {
       url: process.env.DB_URL,
       schema   :true
     }
-  }
+  
 /*
   // If you leave the adapter config unspecified 
   // in a model definition, 'default' will be used.
