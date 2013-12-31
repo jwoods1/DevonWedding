@@ -22,7 +22,10 @@ module.exports = {
   create: function (req, res, next){
     Rsvp.create( req.params.all(), function rsvpCreated (err, rsvp){
       if (err) return next(err);
-      res.json(rsvp);
+      
+      res.redirect('/rsvp/new');
+      
+      //res.json(rsvp);
     });
   }
 
