@@ -35,7 +35,22 @@
   </head>
 
   <body>
-
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+           <!---EDIT THE TITLE HERE!!!!-->
+            <h4 class="modal-title" id="myModalLabel">Are you going to come to the wedding?</h4>
+          </div>
+          <div class="modal-body" id="rsvpBody">
+           <button type="button" class="btn btn-default" id="btnYes">YES</button>
+           <button type="button" class="btn btn-default" id="btnNo">NO</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- Modal -->
     
 
       <!-- Static navbar -->
@@ -53,9 +68,9 @@
           <ul class="nav navbar-nav">
             <li class='navbar-left'><a href="#" data-toggle="modal" data-target="#myModal">R.S.V.P</a></li>
 
-            <li><a class="navbar-brand" href="#">D ♥ L</a></li>
+            <li><a class="navbar-brand" href="/">D ♥ L</a></li>
 
-            <li class='navbar-right'><a href="#">Registry</a></li>
+            <li class='navbar-right'><a href="Rsvp/reg">Registry</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

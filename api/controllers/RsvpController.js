@@ -27,6 +27,9 @@ module.exports = {
       
       //res.json(rsvp);
     });
+  },
+  reg: function (req, res){
+    res.view();
   }
 
 

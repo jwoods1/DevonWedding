@@ -6,7 +6,8 @@ $("#btnYes").on( "click", function() {
 
 $("#btnNo").on("click", function(){
   $("#btnYes").remove();
-  $(this).replaceWith("<h2>You Selected No! :( </h2>");
+  $(this).replaceWith("<h3>Sorry you can't come, click the link below to see  where we have registered.</h3><a href='/Rsvp/reg'>Registry Page</a>");
+  $("#myModalLabel").text("Change Text in assets/linker/js/custom.js");
 });
 
  $.backstretch([
