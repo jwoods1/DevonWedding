@@ -21,9 +21,28 @@ module.exports = {
   },
   create: function (req, res, next){
     Rsvp.create( req.params.all(), function rsvpCreated (err, rsvp){
-      if (err) return next(err);
+      if (err) {
+        console.log(err);
+        req.session.flash = {
+          err: err.ValidationError
+        }
+
+        return res.redirect('/rsvp/new');
+      }
       
-      res.redirect('/rsvp/new');
+      email.send({
+        to: [{
+          name: rsvp.firstName,
+          email: rsvp.email
+        }],
+        subject: 'omg i love you guys!!1',
+        html: 
+          'I can\'t wait to see you all in Chicago<br/>' +
+          'I loe you so much!!!! ',
+       text: 'text fallback goes here-- in case some recipients (let\'s say the Chipettes)  can\'t receive HTML emails'
+});
+
+      res.redirect('/rsvp/reg');
       
       //res.json(rsvp);
     });

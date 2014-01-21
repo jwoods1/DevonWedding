@@ -1,8 +1,33 @@
+
+$(document).ready(function(){
+  $("#first").hide();
+  $("#last").hide();
+  $("#party").hide();
+  $("#email").hide();
+  $("#rsvpSubmit").hide();
+})
+
+$("#modalClose").on("click", function(){
+  $("#btnNo").show();
+  $("#btnYes").show();
+  $("#first").hide();
+  $("#last").hide();
+  $("#party").hide();
+  $("#email").hide();
+  $("#rsvpSubmit").hide();
+})
+
 $("#btnYes").on( "click", function() {
-  $("#btnNo").remove();
-  $(this).replaceWith("<form action='/rsvp/create' method='post' role='form'><div class='form-group'><input type='text' class='form-control' placeholder='your first name' name='firstName'></div><div class='form-group'><input type='text' class='form-control' placeholder='Last Name' name='lastName'></div><div class='form-group'><input type='text' class='form-control' placeholder='Number in party' name='guestNum'></div><div class='form-group'><input type='email' class='form-control' name='email' placeholder='Enter email'></div><input type='submit' class='btn btn-lg btn-primary btn-block' value='RSVP'/><input type='hidden' name='_csrf' value='<%=_csrf %>' /></form>");
-  $("#myModalLabel").text("Please fill in your information below");
+  $("#btnNo").hide();
+  $(this).hide();
+  $("#myModalLabel").text("Please fill in your information below")
+  $("#first").show();
+  $("#last").show();
+  $("#party").show();
+  $("#email").show();
+  $("#rsvpSubmit").show();
 });
+
 
 $("#btnNo").on("click", function(){
   $("#btnYes").remove();
@@ -50,9 +75,9 @@ $("#btnNo").on("click", function(){
 
   ], {duration: 2000, fade: 750});
 
-
 //Mandrill Mail
 
+var emailAdd = $('#emailTest').val();
 // Create a function to log the response from the Mandrill API
 function log(obj) {
     $('#response').text(JSON.stringify(obj));
@@ -64,8 +89,8 @@ var m = new mandrill.Mandrill('4CNgZbD1hI1anejz-cnajw');
 // create a variable for the API call parameters
 var params = {
     "message": {
-        "from_email":"Jwoods@motodynasty.com",
-        "to":[{"email":"jdwoodsy1@gmail.com"}],
+        "from_email":"hightower.devon.anthony@gmail.com",
+        "to":[{"email":emailAdd}],
         "subject": "Sending a text email from the Mandrill API",
         "html": "<h1>Thanks for RSVPing for the wedding</h1>",
         "autotext":true,
@@ -74,12 +99,12 @@ var params = {
     }
 };
 
-$("#email").on("click",function sendTheMail() {
+$("#btnYes").on("click",function sendTheMail() {
 // Send the email!
-
     m.messages.send(params, function(res) {
         log(res);
     }, function(err) {
         log(err);
     });
 });
+

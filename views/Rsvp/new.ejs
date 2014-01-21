@@ -1,1 +1,13 @@
-<h1>Thanks for RSVP cant wait to see you at the wedding</h1>
+
+
+
+<div class="jumbotron">
+  <h2>Opps something went wrong. Please try and Rsvp again.</h2>
+  <% if (flash && flash.err) { %>
+    <ul class="alert alert-success">
+      <% Object.keys(flash.err).forEach(function(error) { %>
+        <li><%- JSON.stringify(flash.err[error]) %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+</div>

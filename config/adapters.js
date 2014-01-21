@@ -19,7 +19,17 @@ module.exports.adapters = {
       module   :'sails-mongo',
       url: process.env.DB_URL,
       schema   :true
+    },
+
+      // Mandrill
+  'my favorite mandrill account': {
+    module: 'sails-mandrill',
+    apiKey: "4CNgZbD1hI1anejz-cnajw", // the api key for your mandrill account
+    from: {
+      name: 'Devon Hightower',
+      email: 'hightower.devon.anthony@gmail.com'
     }
+  }
   
 /*
   // If you leave the adapter config unspecified 
