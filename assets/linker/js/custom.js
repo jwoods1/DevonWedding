@@ -75,36 +75,7 @@ $("#btnNo").on("click", function(){
 
   ], {duration: 2000, fade: 750});
 
-//Mandrill Mail
 
-var emailAdd = $('#emailTest').val();
-// Create a function to log the response from the Mandrill API
-function log(obj) {
-    $('#response').text(JSON.stringify(obj));
-}
 
-// create a new instance of the Mandrill class with your API key
-var m = new mandrill.Mandrill('4CNgZbD1hI1anejz-cnajw');
 
-// create a variable for the API call parameters
-var params = {
-    "message": {
-        "from_email":"hightower.devon.anthony@gmail.com",
-        "to":[{"email":emailAdd}],
-        "subject": "Sending a text email from the Mandrill API",
-        "html": "<h1>Thanks for RSVPing for the wedding</h1>",
-        "autotext":true,
-        "track_clicks":true,
-        "track_opens":true
-    }
-};
-
-$("#btnYes").on("click",function sendTheMail() {
-// Send the email!
-    m.messages.send(params, function(res) {
-        log(res);
-    }, function(err) {
-        log(err);
-    });
-});
 

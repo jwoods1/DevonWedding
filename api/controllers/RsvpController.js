@@ -31,22 +31,31 @@ module.exports = {
       }
       
       email.send({
+        Templates:[{
+          "template_name":"RSVP"
+        }],
         to: [{
           name: rsvp.firstName,
           email: rsvp.email
         }],
-        subject: 'omg i love you guys!!1',
-        html: 
-          'I can\'t wait to see you all in Chicago<br/>' +
-          'I loe you so much!!!! ',
-       text: 'text fallback goes here-- in case some recipients (let\'s say the Chipettes)  can\'t receive HTML emails'
-});
-
+        
+      });
+      
       res.redirect('/rsvp/reg');
       
       //res.json(rsvp);
     });
   },
+
+  index:function(req, res, next){
+    Rsvp.find(function foundRsvp(err, rsvp){
+      if(err) return next(err);
+      res.view({
+        rsvp: rsvp
+      });
+    });
+  },
+  
   reg: function (req, res){
     res.view();
   }

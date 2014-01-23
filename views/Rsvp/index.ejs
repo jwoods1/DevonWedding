@@ -1,0 +1,25 @@
+<div class="container">
+        <h3>RSVPS</h3>
+        <table class="table">
+                <tr>        
+                        <th>First</th>
+                        <th>Last</th>
+                        <th>#</th>
+                        <th>Email</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                </tr>
+
+                <% _.each(rsvp, function(rsvp){ %>
+                <tr data-id="<% rsvp.id %>" data-model="user">
+                        <td><%= rsvp.firstName %></td>
+                        <td><%= rsvp.lastName %></td>
+                        <td><%= rsvp.guestNum %></td>
+                        <td><%= rsvp.email %></td>
+                     
+
+                </tr>
+                <% }) %>
+        </table>
+</div>
