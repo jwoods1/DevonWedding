@@ -28,7 +28,7 @@ module.exports.adapters = {
     apiKey: "4CNgZbD1hI1anejz-cnajw", // the api key for your mandrill account
     from: {
       name: 'Devon Hightower',
-      email: 'hightower.devon.anthony@gmail.com'
+      email: 'info@laurendevonwedding.com'
     }
   },
   'newrelic':{
