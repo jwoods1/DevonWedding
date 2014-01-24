@@ -13,7 +13,7 @@
  */
 
 module.exports.adapters = {
-this is cool
+
 
   'default': 'mongo',
     mongo: {
