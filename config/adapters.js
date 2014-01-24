@@ -30,8 +30,20 @@ module.exports.adapters = {
       name: 'Devon Hightower',
       email: 'hightower.devon.anthony@gmail.com'
     }
-  }
-  
+  },
+  'newrelic':{
+    module: 'newrelic',
+    app_name : ['dhWedding'],
+    license_key : '71dd9a6834d750d0b740a0d85a10fd2c549e880b',
+    logging : {
+      /**
+       * Level at which to log. 'trace' is most useful to New Relic when diagnosing
+       * issues with the agent, 'info' and higher will impose the least overhead on
+       * production applications.
+       */
+      level : 'trace'
+    }
+ } 
 /*
   // If you leave the adapter config unspecified 
   // in a model definition, 'default' will be used.
