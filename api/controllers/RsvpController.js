@@ -31,7 +31,7 @@ module.exports = {
       }
       
       email.send({
-        Templates:[{
+        templates:[{
           "template_name":"RSVP"
         }],
         to: [{
